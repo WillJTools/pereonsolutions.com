@@ -3240,8 +3240,12 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #b30000;
+			  background: linear-gradient(to bottom right, #8b0000, #ff4d4d); /* dark red to soft red */
+			  background-repeat: no-repeat;
+			  background-size: cover;
 		}
+
+
 
 		.wrapper.style1-alt {
 			background-color: #002868;
