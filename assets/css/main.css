@@ -1,262 +1,501 @@
-/* Revised full main.css for Pereon Solutions with improved mobile responsiveness */
 
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600");
+/* Pereon Solutions - Main Stylesheet */
 
-/* Reset */
-*, *:before, *:after {
-	box-sizing: border-box;
+/* Reset and Base */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #2f537f;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-	margin: 0;
-	padding: 0;
-	font-weight: normal;
-}
-
-ol, ul {
-	list-style: none;
-}
-
-img {
-	max-width: 100%;
-	height: auto;
-}
-
-body {
-	font-family: 'Source Sans Pro', sans-serif;
-	line-height: 1.6;
-	background: #1b1b3a;
-	color: #ffffff;
-}
-
-/* Layout */
-#wrapper {
-	padding-left: 18em;
-}
-
+/* Sidebar */
 #sidebar {
-	width: 18em;
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	background: #2e2e4d;
-	padding: 2em 1em;
-	overflow-y: auto;
-	z-index: 10000;
+  background: #2d2545;
+  width: 230px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+#sidebar .inner {
+  width: 100%;
 }
 
 #sidebar nav ul {
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0 1.5em;
+  text-align: left;
 }
 
 #sidebar nav ul li {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 
 #sidebar nav ul li a {
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 600;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
-#sidebar nav ul li a:hover {
-	color: #ffd700;
+/* Wrapper */
+#wrapper {
+  margin-left: 230px;
 }
 
-.wrapper {
-	padding: 4em 2em;
+/* Intro */
+#intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background: #3474ac;
+  text-align: center;
 }
 
-.wrapper.fullscreen {
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+#intro img {
+  max-height: 275px;
+  margin-bottom: 1.5em;
 }
 
-.wrapper.style1 {
-	background: #3173ad url("images/overlay.png");
-	background-size: cover;
-	color: #fff;
-	text-align: center;
+#intro p {
+  max-width: 600px;
+  margin: 0 auto 1.5em auto;
+  padding: 0 1em;
 }
 
-.wrapper.style2 {
-	background: #f2f2f2;
-	color: #333;
-}
-
-.wrapper.style3 {
-	background: #fff6e5;
-	color: #000;
-}
-
-h1, h2, h3 {
-	font-weight: 600;
-	margin-bottom: 0.5em;
-}
-
-h1 {
-	font-size: 2.5em;
-}
-
-h2 {
-	font-size: 2em;
-}
-
-h3 {
-	font-size: 1.5em;
-}
-
-p {
-	margin-bottom: 1.5em;
-	font-size: 1.1em;
-}
-
+/* Buttons */
 .button {
-	display: inline-block;
-	padding: 0.75em 2em;
-	border: 2px solid #fff;
-	color: #fff;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	text-decoration: none;
-	transition: background 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  padding: 0.75em 2em;
+  color: #fff;
+  border: 2px solid #fff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
 }
 
 .button:hover {
-	background: #ffd700;
-	color: #000;
+  background: #fff;
+  color: #000;
 }
 
+/* Sections */
+.wrapper {
+  padding: 4em 2em;
+}
+
+.wrapper h2 {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.wrapper p {
+  margin-bottom: 1.5em;
+}
+
+/* Features */
 .features {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 2em;
-	margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
 }
 
 .features section {
-	background: #1c1c3a;
-	border-radius: 0.5em;
-	padding: 2em;
-	text-align: center;
-	transition: transform 0.3s ease;
+  background: #1c1c3b;
+  padding: 1.5em;
+  border-radius: 8px;
+  text-align: left;
 }
 
-.features section:hover {
-	transform: translateY(-5px);
+.features h3 {
+  margin-bottom: 0.75em;
+  font-size: 1.25em;
 }
 
-.features .icon {
-	font-size: 2em;
-	margin-bottom: 1em;
-	color: #ffd700;
+/* Contact Form */
+form .fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
-/* Form Styling */
-form {
-	width: 100%;
+form .field {
+  flex: 1;
+  min-width: 45%;
 }
 
-.fields {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1.5em;
+form .field input,
+form .field textarea {
+  width: 100%;
+  padding: 0.75em;
+  border-radius: 4px;
+  border: none;
 }
 
-.field {
-	flex: 1 1 48%;
-	display: flex;
-	flex-direction: column;
-}
-
-.field label {
-	font-weight: bold;
-	margin-bottom: 0.5em;
-}
-
-.field input,
-.field textarea {
-	padding: 0.75em;
-	border-radius: 0.25em;
-	border: none;
-	font-size: 1em;
-}
-
-textarea {
-	resize: vertical;
-}
-
-.button.submit {
-	background: #ffd700;
-	color: #000;
-	border: none;
-	margin-top: 1em;
-	cursor: pointer;
-}
-
-.button.submit:hover {
-	background: #e0c200;
+form .actions .button.submit {
+  background-color: #ffdc00;
+  color: #000;
+  border: none;
 }
 
 /* Footer */
 #footer {
-	padding: 2em;
-	text-align: center;
-	font-size: 0.9em;
+  background: #1a1a1a;
+  color: #bbb;
+  padding: 2em;
+  text-align: center;
 }
 
-#footer .menu {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+#footer a {
+  color: #bbb;
 }
 
-#footer .menu li {
-	display: inline;
-	margin: 0 1em;
+/* Mobile */
+@media screen and (max-width: 768px) {
+  #wrapper {
+    margin-left: 0;
+  }
+
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1em 0;
+  }
+
+  #sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #sidebar nav ul li {
+    margin: 0.5em 0;
+  }
+
+  #intro img {
+    max-height: 150px;
+  }
+
+  #intro p {
+    font-size: 1rem;
+    padding: 0 1em;
+  }
+
+  form .field {
+    min-width: 100%;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Responsive Tweaks */
-@media screen and (max-width: 980px) {
-	#wrapper {
-		padding-left: 0;
-	}
-
-	#sidebar {
-		width: 100%;
-		height: auto;
-		position: relative;
-		padding: 1em;
-		text-align: center;
-	}
-
-	#sidebar nav ul li {
-		display: inline-block;
-		margin: 0 1em;
-	}
-
-	.wrapper.fullscreen {
-		padding-top: 3em;
-		flex-direction: column;
-	}
-
-	img {
-		max-width: 90%;
-		height: auto;
-	}
-
-	.features {
-		grid-template-columns: 1fr;
-	}
-
-	.field {
-		flex: 1 1 100%;
-	}
-}
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
+/* Reserved */
